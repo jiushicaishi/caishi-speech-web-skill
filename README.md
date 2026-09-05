@@ -2,6 +2,9 @@
 
 生成**博物馆/展厅讲解辅助**用的单文件 HTML 巡讲网页。由真实展厅巡讲任务沉淀的自研引擎（档案出版风），不是通用 PPT 模板——克制、留白、讲稿与提示卡一体。
 
+> 📖 **完整使用文档见 [docs/USAGE.md](docs/USAGE.md)**（字段字典 / 8 类版式 / 图片规则 / 换肤 / 双屏 / PDF / QC / Agent 接入 / 引擎架构 / FAQ）。
+> 🚀 **一键更新脚本**：改完内容后运行 `sync-update.bat`（或 `sync-update.ps1`）即可提交并推送 GitHub，详见下文「更新本仓库」。
+
 **跑通只需一条命令**（无需图片、无需服务端）：
 
 ```bash
@@ -51,6 +54,8 @@ node scripts/qc.mjs out/巡讲网页.html
 ```
 caishi-speech-web-skill/
 ├─ SKILL.md                技能入口（agent 工作流 + DoD）
+├─ docs/USAGE.md           完整使用文档
+├─ sync-update.bat / .ps1  一键提交+推送脚本
 ├─ scripts/
 │  ├─ build.mjs            渲染引擎（模板 + PAGES + imgmap → 单文件）
 │  └─ qc.mjs               一键质检
@@ -88,6 +93,28 @@ caishi-speech-web-skill/
 ## 本技能作为 DSH Skill 使用
 
 `SKILL.md` 遵循 [Agent Skills](https://agent-skills.ai) 规范：当任务匹配描述（"讲解网页/巡讲网页/演示网页/网页版讲解稿/展厅讲解辅助/档案出版风"），agent 自动加载 SKILL.md 并按其四步工作流执行。
+
+## 更新本仓库（一键同步）
+
+本仓库即 DSH 技能根（`E:\DSH\.dsh\skills\caishi-speech-web-skill`）。改动后同步 GitHub 两种方式任选：
+
+**方式 A · 双击脚本（推荐日常用）**
+```
+双击 sync-update.bat          # 自动: git add + commit + push
+```
+或用命令行带提交信息：
+```powershell
+powershell -ExecutionPolicy Bypass -File .\sync-update.ps1 "v1.2 新增X页模板"
+```
+
+**方式 B · 手动**
+```bash
+git add -A
+git commit -m "改动说明"
+git push          # 凭据已存，免密
+```
+
+脚本动作：检查改动 → 无改动则跳过 → 有则 add/commit/push → 输出仓库地址。若 push 因网络（GitHub 间歇被扰）失败，commit 已保存不丢，网络恢复重跑即可。可选镜像复制（把本仓库同步到项目内副本）见脚本头部 `$MirrorCopy` 配置。
 
 ## License
 
