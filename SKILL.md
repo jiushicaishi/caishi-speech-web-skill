@@ -57,6 +57,7 @@ description: 生成博物馆/展厅/展馆讲解辅助用的单文件 HTML 巡�
 
 ## 工程与路径（本仓库根）
 
+- 详细使用文档：`docs/USAGE.md`（字段字典/版式/图片/换肤/双屏/PDF/QC/引擎架构/FAQ——agent 先读它再动手）
 - 内容数据源：`examples/pages.demo.mjs`（PAGES 示例）——实际内容自行新建 pages.mjs 或复制该文件改写
 - 渲染引擎：`scripts/build.mjs`（读 templates/skeleton-v3.html + PAGES + 可选 imgmap → 输出单文件）
 - 骨架模板：`templates/skeleton-v3.html`（CSS/JS 权威源；改版式改这里）
@@ -68,6 +69,7 @@ description: 生成博物馆/展厅/展馆讲解辅助用的单文件 HTML 巡�
   - web-checklist.md 质检清单 | web-faq.md 常见问题与复盘
 - 配色记录：`themes/*.json`（PPTX/扩展配色参考；网页三主题换肤由引擎内置 CSS 变量驱动）
 - 备注契约格式（NOTES_BASE 键）与字段解释：见 web-layouts.md 第三节
+- 版本同步：`sync-update.bat`/`.ps1`（git add/commit/push 一键，改动后运行）
 
 ## 铁律（踩坑沉淀，违者破相）
 
