@@ -1,0 +1,15 @@
+# 构建产物不入库（可按需重新生成）
+examples/out/
+*.html.bak
+
+# Node
+node_modules/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+
+# 本地临时
+*.log
