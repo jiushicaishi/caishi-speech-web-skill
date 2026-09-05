@@ -96,7 +96,7 @@ caishi-speech-web-skill/
 
 ## 更新本仓库（一键同步）
 
-本仓库即 DSH 技能根（`E:\DSH\.dsh\skills\caishi-speech-web-skill`）。改动后同步 GitHub 两种方式任选：
+本仓库即 DSH 技能根（若按技能方式安装，位于 `<DSH_HOME>\skills\caishi-speech-web-skill`，`DSH_HOME` 通常为 `~/.dsh`）。改动后同步 GitHub 两种方式任选：
 
 **方式 A · 双击脚本（推荐日常用）**
 ```

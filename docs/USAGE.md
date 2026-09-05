@@ -320,10 +320,11 @@ node scripts/qc.mjs [产物路径]      # 缺省检查 examples/out/demo.html
 - **技能名**：`caishi-speech-web-skill`
 - **触发词**：讲解网页 / 巡讲网页 / 演示网页 / 网页版讲解稿 / 展厅讲解辅助 / 档案出版风讲解页
 
-接入 DSH 用户级技能根（跨会话可用）：
+接入 DSH 用户级技能根（跨会话可用，把本仓库 clone 或复制到该目录）：
 ```
-E:\DSH\.dsh\skills\caishi-speech-web-skill\   ← 本仓库内容即技能根
+<DSH_HOME>\skills\caishi-speech-web-skill\   ← 本仓库内容即技能根
 ```
+（`DSH_HOME` 通常为 `~/.dsh` 或环境变量 `$DSH_HOME`）
 
 **给 Agent 的执行要点（摘自 SKILL.md 工作流）**
 1. 分诊（规模/图/深浅/时长）
